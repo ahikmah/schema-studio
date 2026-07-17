@@ -1,0 +1,31 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mybro-database-designer",
+  "main": "src/worker/index.ts",
+  "compatibility_date": "2026-07-15",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": false,
+  "assets": {
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+  "routes": [
+    {
+      "pattern": "lab.devchunk.biz.id",
+      "custom_domain": true
+    }
+  ],
+  "hyperdrive": [
+    {
+      "binding": "HYPERDRIVE",
+      "id": "d11b848e8f874372bf487596a60184d4"
+    }
+  ],
+  "vars": {
+    "ENVIRONMENT": "production",
+    "ACCESS_TEAM_DOMAIN": "twex.cloudflareaccess.com",
+    "ACCESS_AUD": "312720ad44cbf97fee749f6aada1992e0a6330d5bb89a8e2ff14c050836e4c6c"
+  }
+}

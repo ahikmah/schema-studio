@@ -1,0 +1,38 @@
+{
+  "name": "schema-studio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "db:migrate": "psql \"$DATABASE_URL\" -v ON_ERROR_STOP=1 -f migrations/0001_initial.sql",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "dependencies": {
+    "@codemirror/lang-sql": "^6.10.0",
+    "@dbml/core": "8.3.1-custom-metadata.2",
+    "@uiw/react-codemirror": "4.25.11",
+    "@xyflow/react": "12.11.2",
+    "hono": "4.12.30",
+    "pg": "^8.16.3",
+    "react": "19.2.7",
+    "react-dom": "19.2.7"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "1.45.0",
+    "@cloudflare/workers-types": "5.20260715.1",
+    "@types/node": "26.1.1",
+    "@types/pg": "^8.20.0",
+    "@types/react": "19.2.17",
+    "@types/react-dom": "19.2.3",
+    "@vitejs/plugin-react": "6.0.3",
+    "pg-mem": "^3.0.14",
+    "typescript": "7.0.2",
+    "vite": "8.1.4",
+    "vitest": "4.1.10",
+    "wrangler": "4.111.0"
+  }
+}
